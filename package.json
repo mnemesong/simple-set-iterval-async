@@ -1,6 +1,6 @@
 {
   "name": "simple-set-iterval-async",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Non intersectable async interval. It will never calls new execution until previous had not finished",
   "main": "./js/src/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mnemesong/simple-set-iterval-async/issues"
   },

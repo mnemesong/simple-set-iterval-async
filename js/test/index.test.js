@@ -49,13 +49,13 @@ var assert_1 = __importDefault(require("assert"));
             switch (_a.label) {
                 case 0:
                     counter.cnt1 = counter.cnt1 + 1;
-                    if (!(counter.cnt1 === 3)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, new Promise(function (r) { return setTimeout(r, 3000); })];
+                    if (!((counter.cnt1 > 3) && (counter.cnt1 < 7))) return [3 /*break*/, 2];
+                    return [4 /*yield*/, new Promise(function (r) { return setTimeout(r, 1700); })];
                 case 1:
                     _a.sent();
                     _a.label = 2;
                 case 2:
-                    console.log("cnt 1 =" + counter.cnt1);
+                    console.log((new Date()).toLocaleTimeString() + ": cnt 1 = " + counter.cnt1);
                     return [2 /*return*/, Promise.resolve()];
             }
         });
@@ -63,18 +63,18 @@ var assert_1 = __importDefault(require("assert"));
     var i2 = (0, src_1.setIntervalAsync)(function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             counter.cnt2 = counter.cnt2 + 1;
-            console.log("cnt 2 =" + counter.cnt2);
+            console.log((new Date()).toLocaleTimeString() + ": cnt 2 = " + counter.cnt2);
             return [2 /*return*/, Promise.resolve()];
         });
     }); }, 2000);
     setTimeout(function () {
         (0, src_1.clearIntervalAsync)(i1);
         (0, src_1.clearIntervalAsync)(i2);
-        assert_1.default.ok((counter.cnt1 < 9) && (counter.cnt1 > 5));
-        assert_1.default.ok((counter.cnt2 < 7) && (counter.cnt2 > 3));
+        assert_1.default.ok((counter.cnt1 < 9) && (counter.cnt1 > 6));
+        assert_1.default.ok((counter.cnt2 < 7) && (counter.cnt2 > 4));
         setTimeout(function () {
-            assert_1.default.ok((counter.cnt1 < 9) && (counter.cnt1 > 5));
-            assert_1.default.ok((counter.cnt2 < 7) && (counter.cnt2 > 3));
+            assert_1.default.ok((counter.cnt1 < 9) && (counter.cnt1 > 6));
+            assert_1.default.ok((counter.cnt2 < 7) && (counter.cnt2 > 4));
         }, 5000);
     }, 10000);
 });
