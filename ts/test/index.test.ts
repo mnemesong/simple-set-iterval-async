@@ -1,23 +1,3 @@
-# simple-set-iterval-async
-Non intersectable async interval. It will never calls new execution until previous had not finished
-
-## Api
-```typescript
-export type AsyncIntervalController = {
-    continue: boolean,
-    lastExecTime: number,
-}
-
-export function setIntervalAsync(
-    f: () => Promise<void>,
-    timeoutMs: number
-): AsyncIntervalController {...}
-
-export function clearIntervalAsync(controller: AsyncIntervalController): void {...}
-```
-
-## Test
-```typescript
 import { describe, it } from "mocha";
 import { clearIntervalAsync, setIntervalAsync } from "../src";
 import assert from "assert";
@@ -48,4 +28,3 @@ it("test set interval async", () => {
         }, 5000)
     }, 10000)
 })
-```
