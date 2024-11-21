@@ -1,6 +1,9 @@
 # simple-set-iterval-async
 Non intersectable async interval. It will never calls new execution until previous had not finished
 
+# REPOSITORY HAVE BEEN MOVED!
+Repository have been moved to: https://gitflic.ru/project/pantagruel74/simple-set-iterval-async
+
 ## Api
 ```typescript
 export type AsyncIntervalController = {
